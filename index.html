@@ -83,29 +83,31 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 <div class="popup-icon">🛍️</div>
 <div class="popup-text"><b id="p-name">Maman Grâce</b> vient de commander <b id="p-prod">Boutique Complète</b><br><span class="popup-time" id="p-time">Il y a 1 jour • Pointe-Noire</span></div>
 </div>
-
 <script>
 const datas=[
 {name:"Maman Grâce",prod:"Boutique Complète",time:"Il y a 1 jour • Pointe-Noire",icon:"🛍️"},
 {name:"Chris M.",prod:"Carte Virtuelle",time:"Il y a 2 jours • Brazzaville",icon:"💳"},
-{name:"Auto École Victoire",prod:"Site Pro + WhatsApp",time:"Il y a 1 jour • Pointe-Noire",icon:"🌐"},
-{name:"Maman Bijoux",prod:"Boutique Complète",time:"Il y a 3 jours • Tié-Tié",icon:"🛍️"},
-{name:"Samuel K.",prod:"IPTV Premium",time:"Il y a 2 jours • Dolisie",icon:"📺"},
-{name:"Boutique Grâce",prod:"QR Code Pro",time:"Il y a 1 jour • Mvoumvou",icon:"🔳"}
+{name:"Maman Bijoux",prod:"Boutique Complète",time:"Il y a 3 jours • Tié-Tié",icon:"🛍️"}
 ];
 let idx=0;
+let count=0;
 function showPop(){
-const d=datas[idx%datas.length];
+if(count>=2) return; // STOP APRES 2 FOIS
+const d=datas[idx];
 document.getElementById('p-name').innerText=d.name;
 document.getElementById('p-prod').innerText=d.prod;
 document.getElementById('p-time').innerText=d.time;
 document.querySelector('.popup-icon').innerText=d.icon;
 document.getElementById('popup').classList.add('show');
-setTimeout(()=>{document.getElementById('popup').classList.remove('show');},4000);
-idx++;
+setTimeout(()=>{document.getElementById('popup').classList.remove('show');},5000);
+idx++; count++;
 }
-setTimeout(showPop,2500);
-setInterval(showPop,9000);
+setTimeout(showPop,6000); // 1er après 6 sec
+setTimeout(showPop,45000); // 2eme après 45 sec puis stop
+
+// fermer si on clique dessus
+document.getElementById('popup').onclick = function(){ this.classList.remove('show'); }
 </script>
+
 </body>
 </html>
