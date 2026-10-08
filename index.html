@@ -7,7 +7,7 @@
 <style>
 body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden}
 .bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 20% 30%, rgba(0,255,136,0.12) 0%, transparent 50%),radial-gradient(circle at 80% 70%, rgba(0,255,136,0.08) 0%, transparent 50%);z-index:-1}
-.container{max-width:420px;margin:0 auto;padding:20px 20px 100px 20px;position:relative}
+.container{max-width:420px;margin:0 auto;padding:20px 20px 110px 20px;position:relative}
 .logo-text{font-size:72px;font-weight:900;text-align:center;color:#00ff88;text-shadow:0 0 20px #00ff88,0 0 40px #00ff88;letter-spacing:4px;margin:10px 0 0 0;line-height:1;animation:glow 2s infinite}
 .sub{font-size:26px;font-weight:bold;text-align:center;margin:0}
 .badge{display:block;width:120px;margin:12px auto;padding:6px 0;border:1px solid #00ff88;border-radius:20px;color:#00ff88;text-align:center;font-size:13px;font-weight:bold}
@@ -18,8 +18,7 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 .counter b{color:#00ff88;font-size:22px;display:block}
 .counter span{font-size:11px;opacity:0.7}
 .services-title{color:#00ff88;font-size:17px;font-weight:bold;margin:22px 0 12px 0;border-bottom:1px solid rgba(0,255,136,0.4);padding-bottom:8px}
-.service{display:flex;align-items:center;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.18);border-radius:12px;padding:13px;margin:9px 0;animation:slide 0.6s ease forwards;opacity:0}
-.service:nth-child(1){animation-delay:0.1s}.service:nth-child(2){animation-delay:0.2s}.service:nth-child(3){animation-delay:0.3s}.service:nth-child(4){animation-delay:0.4s}.service:nth-child(5){animation-delay:0.5s}
+.service{display:flex;align-items:center;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.18);border-radius:12px;padding:13px;margin:9px 0}
 .service-icon{font-size:24px;margin-right:14px;width:32px;text-align:center}
 .service-text{font-size:15px;font-weight:500}
 .price-box{background:linear-gradient(135deg, rgba(0,255,136,0.12), rgba(0,255,136,0.03));border:1.5px solid #00ff88;border-radius:16px;padding:16px;margin:12px 0;display:flex;justify-content:space-between;align-items:center}
@@ -28,14 +27,20 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 .price-box .desc{font-size:11px;opacity:0.6}
 .testi{background:rgba(255,255,255,0.05);border-left:3px solid #00ff88;border-radius:10px;padding:12px;margin:10px 0;font-size:13px}
 .testi b{color:#00ff88;font-size:12px}
-.link-box{margin-top:22px;border:1.5px solid #00ff88;border-radius:14px;padding:15px;background:rgba(0,255,136,0.07);box-shadow:0 0 20px rgba(0,255,136,0.2)}
+.link-box{margin-top:22px;border:1.5px solid #00ff88;border-radius:14px;padding:15px;background:rgba(0,255,136,0.07);box-shadow:0 0 20px rgba(0,255,136,0.2);text-align:center}
 .link{color:#00ff88;word-break:break-all;font-size:12px;text-align:center;display:block;text-decoration:none;margin-bottom:8px}
-.wa{display:flex;align-items:center;justify-content:center;gap:7px;font-size:15px}.wa b{color:#00ff88}
+.wa{display:flex;align-items:center;justify-content:center;gap:7px;font-size:15px;margin-top:10px}.wa b{color:#00ff88}
 .btn{display:block;width:100%;padding:17px 0;background:#00ff88;color:#000;text-align:center;font-weight:900;border-radius:12px;text-decoration:none;margin-top:18px;font-size:17px;box-shadow:0 0 25px #00ff88}
 .sticky{position:fixed;bottom:15px;left:50%;transform:translateX(-50%);width:90%;max-width:380px;background:#00ff88;color:#000;padding:14px 0;border-radius:30px;text-align:center;font-weight:900;text-decoration:none;box-shadow:0 0 30px #00ff88,0 5px 20px rgba(0,0,0,0.5);z-index:999;animation:bounce 2s infinite}
+.qr{width:140px;height:140px;border-radius:12px;border:2px solid #00ff88;margin:12px auto;display:block;background:white;padding:6px}
+.popup{position:fixed;bottom:80px;left:15px;background:rgba(5,15,30,0.96);border:1.5px solid #00ff88;border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 0 20px rgba(0,255,136,0.4);z-index:1000;transform:translateX(-120%);transition:0.6s;max-width:300px}
+.popup.show{transform:translateX(0)}
+.popup-icon{font-size:22px;background:rgba(0,255,136,0.15);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.popup-text{font-size:12px;line-height:1.3}
+.popup-text b{color:#00ff88}
+.popup-time{font-size:10px;opacity:0.5}
 @keyframes glow{0%{text-shadow:0 0 20px #00ff88}50%{text-shadow:0 0 40px #00ff88,0 0 70px #00ff88}100%{text-shadow:0 0 20px #00ff88}}
 @keyframes pulseImg{0%{box-shadow:0 0 20px #00ff88}50%{box-shadow:0 0 40px #00ff88,0 0 70px #00ff88}100%{box-shadow:0 0 20px #00ff88}}
-@keyframes slide{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
 </style>
 </head>
@@ -45,42 +50,62 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 <div class="logo-text">M.S.D</div>
 <div class="sub">Universal Code</div>
 <div class="badge">BETA v0.4</div>
-<div class="profile-wrap"><img class="profile" src="IMG-20260924-WA5118.jpg" alt="MSD Logo"></div>
+<div class="profile-wrap"><img class="profile" src="IMG-20260924-WA5118.jpg" alt="MSD"></div>
 <div class="info">Developer & Tech • Pointe-Noire, Congo</div>
-
-<div class="counter">
-<div><b>127+</b><span>Clients</span></div>
-<div><b>4.9★</b><span>Satisfaction</span></div>
-<div><b>24/7</b><span>Support</span></div>
-</div>
-
+<div class="counter"><div><b>127+</b><span>Clients</span></div><div><b>4.9★</b><span>Satisfaction</span></div><div><b>24/7</b><span>Support</span></div></div>
 <div class="services-title">⚡ SERVICES BETA</div>
 <div class="service"><div class="service-icon">🛍️</div><div class="service-text">Boutique en ligne complète</div></div>
 <div class="service"><div class="service-icon">💳</div><div class="service-text">Carte bancaire virtuelle</div></div>
 <div class="service"><div class="service-icon">🌐</div><div class="service-text">Site pro + WhatsApp direct</div></div>
 <div class="service"><div class="service-icon">📺</div><div class="service-text">IPTV / Box Android / Smart TV</div></div>
 <div class="service"><div class="service-icon">🔳</div><div class="service-text">Carte de visite + QR Code pro</div></div>
-
 <div class="services-title">💰 TARIFS TRANSPARENTS</div>
 <div class="price-box"><div><div class="name">🛍️ Boutique Complète</div><div class="desc">Paiement • Livraison • Stock</div></div><b>50.000 F</b></div>
 <div class="price-box"><div><div class="name">🌐 Site Pro + WhatsApp</div><div class="desc">Design pro + bouton direct</div></div><b>35.000 F</b></div>
 <div class="price-box"><div><div class="name">💳 Carte Virtuelle</div><div class="desc">Visa / PayPal / Shopping</div></div><b>10.000 F</b></div>
 <div class="price-box"><div><div class="name">📺 IPTV Premium</div><div class="desc">12 mois • Toutes chaînes</div></div><b>15.000 F</b></div>
-
 <div class="services-title">⭐ ILS NOUS FONT CONFIANCE</div>
-<div class="testi">"MSD m'a créé ma boutique en 2 jours, maintenant je vends même la nuit ! Vraiment pro." <br><b>— Maman Bijoux, Pointe-Noire</b></div>
-<div class="testi">"Carte virtuelle reçue en 10 minutes, j'ai pu payer mon fournisseur Alibaba. Merci boss !" <br><b>— Chris, Brazzaville</b></div>
-<div class="testi">"Site pro + WhatsApp direct, mes clients me contactent plus facilement. Chiffre doublé !" <br><b>— Auto École Victoire, PN</b></div>
-
+<div class="testi">"MSD m'a créé ma boutique en 2 jours, maintenant je vends même la nuit !"<br><b>— Maman Bijoux, Pointe-Noire</b></div>
+<div class="testi">"Carte virtuelle reçue en 10 minutes, j'ai pu payer mon fournisseur Alibaba."<br><b>— Chris, Brazzaville</b></div>
 <a class="btn" href="https://wa.me/242069548949?text=Salut%20MSD%20je%20veux%20mon%20business%20digital">💬 Je veux mon business - 50K</a>
-
 <div class="link-box">
 <a class="link" href="https://msd-universal.github.io/msd-universal-code/">🌐 msd-universal.github.io/msd-universal-code/</a>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/242069548949" alt="QR WhatsApp">
+<div style="font-size:11px;opacity:0.7">Scanne pour WhatsApp direct</div>
 <div class="wa">📲 WhatsApp <b>242 06 954 8949</b></div>
 </div>
 <div style="text-align:center;font-size:10px;opacity:0.35;margin-top:18px">Solutions digitales • Développement • Support Tech 24/7<br>Pointe-Noire • Brazzaville • Kinshasa</div>
 </div>
-
 <a class="sticky" href="https://wa.me/242069548949?text=Salut%20MSD%20je%20veux%20commander">💬 Parler à MSD maintenant</a>
+
+<!-- POP-UP PREUVE SOCIALE 1-3 JOURS -->
+<div class="popup" id="popup">
+<div class="popup-icon">🛍️</div>
+<div class="popup-text"><b id="p-name">Maman Grâce</b> vient de commander <b id="p-prod">Boutique Complète</b><br><span class="popup-time" id="p-time">Il y a 1 jour • Pointe-Noire</span></div>
+</div>
+
+<script>
+const datas=[
+{name:"Maman Grâce",prod:"Boutique Complète",time:"Il y a 1 jour • Pointe-Noire",icon:"🛍️"},
+{name:"Chris M.",prod:"Carte Virtuelle",time:"Il y a 2 jours • Brazzaville",icon:"💳"},
+{name:"Auto École Victoire",prod:"Site Pro + WhatsApp",time:"Il y a 1 jour • Pointe-Noire",icon:"🌐"},
+{name:"Maman Bijoux",prod:"Boutique Complète",time:"Il y a 3 jours • Tié-Tié",icon:"🛍️"},
+{name:"Samuel K.",prod:"IPTV Premium",time:"Il y a 2 jours • Dolisie",icon:"📺"},
+{name:"Boutique Grâce",prod:"QR Code Pro",time:"Il y a 1 jour • Mvoumvou",icon:"🔳"}
+];
+let idx=0;
+function showPop(){
+const d=datas[idx%datas.length];
+document.getElementById('p-name').innerText=d.name;
+document.getElementById('p-prod').innerText=d.prod;
+document.getElementById('p-time').innerText=d.time;
+document.querySelector('.popup-icon').innerText=d.icon;
+document.getElementById('popup').classList.add('show');
+setTimeout(()=>{document.getElementById('popup').classList.remove('show');},4000);
+idx++;
+}
+setTimeout(showPop,2500);
+setInterval(showPop,9000);
+</script>
 </body>
 </html>
