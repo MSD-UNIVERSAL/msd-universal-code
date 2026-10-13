@@ -46,8 +46,6 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 .popup-text{font-size:12px;line-height:1.3}
 .popup-text b{color:#00ff88}
 .popup-time{font-size:10px;opacity:0.5}
-
-/* MODAL DETAILS */
 .modal{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:2000;display:none;overflow-y:auto;padding:20px}
 .modal.active{display:flex;align-items:flex-start;justify-content:center}
 .modal-box{background:#0e1a2a;border:1.5px solid #00ff88;border-radius:18px;max-width:400px;width:100%;padding:20px;margin-top:30px;box-shadow:0 0 30px rgba(0,255,136,0.3)}
@@ -57,7 +55,6 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 .comp b{display:block;margin-bottom:4px}
 .comp.pro{border-left:3px solid #00ff88;background:rgba(0,255,136,0.08)}
 .close-modal{display:block;width:100%;margin-top:14px;padding:12px;background:#00ff88;color:#000;border:none;border-radius:25px;font-weight:900;cursor:pointer}
-
 @keyframes glow{0%{text-shadow:0 0 20px #00ff88}50%{text-shadow:0 0 40px #00ff88,0 0 70px #00ff88}100%{text-shadow:0 0 20px #00ff88}}
 @keyframes pulseImg{0%{box-shadow:0 0 20px #00ff88}50%{box-shadow:0 0 40px #00ff88,0 0 70px #00ff88}100%{box-shadow:0 0 20px #00ff88}}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
@@ -72,16 +69,13 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 <div class="profile-wrap"><img class="profile" src="IMG-20260924-WA5118.jpg" alt="MSD"></div>
 <div class="info">Developer & Tech • Pointe-Noire, Congo</div>
 <div class="counter"><div><b>127+</b><span>Clients</span></div><div><b>4.9★</b><span>Satisfaction</span></div><div><b>24/7</b><span>Support</span></div></div>
-
 <div class="services-title">⚡ SERVICES BETA</div>
 <div class="service"><div class="service-left"><div class="service-icon">🛍️</div><div class="service-text">Boutique en ligne complète</div></div><button class="detail-btn" onclick="openM('boutique')">Détails</button></div>
 <div class="service"><div class="service-left"><div class="service-icon">💳</div><div class="service-text">Carte bancaire virtuelle</div></div><button class="detail-btn" onclick="openM('carte')">Détails</button></div>
 <div class="service"><div class="service-left"><div class="service-icon">🌐</div><div class="service-text">Site pro + WhatsApp direct</div></div><button class="detail-btn" onclick="openM('vitrine')">Détails</button></div>
 <div class="service"><div class="service-left"><div class="service-icon">📺</div><div class="service-text">IPTV / Box Android</div></div><button class="detail-btn" onclick="openM('iptv')">Détails</button></div>
 <div class="service"><div class="service-left"><div class="service-icon">🔳</div><div class="service-text">Carte de visite + QR Code</div></div><button class="detail-btn" onclick="openM('qr')">Détails</button></div>
-
 <div class="services-title">💰 TARIFS TRANSPARENTS</div>
-
 <div class="price-box">
 <div class="price-top"><div><div class="name">🛍️ Boutique Complète</div><div class="desc">100+ produits • Paiement • Livraison • Stock</div></div><b>50.000 F</b></div>
 <div class="price-actions">
@@ -89,7 +83,6 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 <a class="btn-order" href="https://wa.me/242069548949?text=Boss%20je%20veux%20Boutique%2050k">Commander</a>
 </div>
 </div>
-
 <div class="price-box">
 <div class="price-top"><div><div class="name">🌐 Site Pro + WhatsApp</div><div class="desc">Design pro + bouton direct</div></div><b>35.000 F</b></div>
 <div class="price-actions">
@@ -97,7 +90,6 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 <a class="btn-order" href="https://wa.me/242069548949?text=Boss%20je%20veux%20Site%20Pro%2035k">Commander</a>
 </div>
 </div>
-
 <div class="price-box">
 <div class="price-top"><div><div class="name">💳 Carte Virtuelle</div><div class="desc">Visite + Visa / PayPal</div></div><b>10.000 F</b></div>
 <div class="price-actions">
@@ -105,15 +97,13 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 <a class="btn-order" href="https://wa.me/242069548949?text=Boss%20je%20veux%20Carte%20Virtuelle">Commander</a>
 </div>
 </div>
-
 <div class="price-box">
-<div class="price-top"><div><div class="name">📺 IPTV Premium</div><div class="desc">12 mois • Toutes chaînes</div></div><b>15.000 F</b></div>
+<div class="price-top"><div><div class="name">📺 IPTV Premium</div><div class="desc">12 mois • Toutes chaînes • Installation</div></div><b>25.000 F</b></div>
 <div class="price-actions">
 <button class="btn-details" onclick="openM('iptv')">Voir détails →</button>
-<a class="btn-order" href="https://wa.me/242069548949?text=Boss%20je%20veux%20IPTV">Commander</a>
+<a class="btn-order" href="https://wa.me/242069548949?text=Boss%20je%20veux%20IPTV%2025k">Commander</a>
 </div>
 </div>
-
 <div class="services-title">⭐ ILS NOUS FONT CONFIANCE</div>
 <div class="testi">"MSD m'a créé ma boutique en 2 jours, maintenant je vends même la nuit !"<br><b>— Maman Bijoux, Pointe-Noire</b></div>
 <div class="testi">"Carte virtuelle reçue en 10 minutes, j'ai pu payer mon fournisseur Alibaba."<br><b>— Chris, Brazzaville</b></div>
@@ -127,63 +117,52 @@ body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden
 <div style="text-align:center;font-size:10px;opacity:0.35;margin-top:18px">Solutions digitales • Développement • Support Tech 24/7<br>Pointe-Noire • Brazzaville • Kinshasa</div>
 </div>
 <a class="sticky" href="https://wa.me/242069548949?text=Salut%20MSD%20je%20veux%20commander">💬 Parler à MSD maintenant</a>
-
-<!-- POP-UP PREUVE SOCIALE 1-3 JOURS -->
 <div class="popup" id="popup">
 <div class="popup-icon">🛍️</div>
 <div class="popup-text"><b id="p-name">Maman Grâce</b> vient de commander <b id="p-prod">Boutique Complète</b><br><span class="popup-time" id="p-time">Il y a 1 jour • Pointe-Noire</span></div>
 </div>
-
-<!-- MODALS DETAILS -->
 <div class="modal" id="modal-boutique">
 <div class="modal-box">
 <h2>🛍️ Boutique Complète - Pourquoi c'est mieux que Facebook?</h2>
 <p>Tu avais raison Boss, 3 photos ne suffisent pas. Voilà la vraie différence :</p>
-<div class="comp"><b>📢 Page Facebook / Boutique Facebook</b> C'est la pancarte au marché. Gratuit mais ce n'est pas à toi. Facebook peut bloquer demain. Tu passes ta journée à répondre "prix?". Pas de gestion de stock, pas de paiement propre. <br><i style="color:#ffaa00">→ Ça sert à ATTIRER les clients.</i></div>
+<div class="comp"><b>📢 Page Facebook</b> C'est la pancarte au marché. Gratuit mais ce n'est pas à toi. Facebook peut bloquer demain. Tu passes ta journée à répondre "prix?". Pas de gestion de stock. <br><i style="color:#ffaa00">→ Ça sert à ATTIRER.</i></div>
 <div class="comp"><b>💬 Catalogue WhatsApp</b> C'est la caisse. 90% des ventes à P-Noire se font là. Mais personne ne te découvre sur WhatsApp. <br><i style="color:#ffaa00">→ Ça sert à ENCAISSER.</i></div>
-<div class="comp pro"><b>🏪 Boutique en ligne 50K (Ce que je te vends)</b> C'est ton magasin climatisé. Tu peux mettre 100, 200 produits vêtements/sacs avec tailles, couleurs. Tu peux ajouter/supprimer toi-même, mettre "rupture de stock". Le client a confiance et paie sans discuter. Ta boutique est connectée à ton Facebook et ton WhatsApp. <br><i style="color:#00ff88">→ Ça sert à RASSURER et devenir une MARQUE.</i></div>
-<p style="margin-top:10px"><b style="color:#00ff88">✅ Pour 50K tu as :</b><br>• Produits ILLIMITÉS (pas 3 photos)<br>• Ajout/suppression par toi-même (je te montre)<br>• Panier + commande WhatsApp auto + livraison par quartier (Tié-Tié, Mvoumvou...)<br>• Mode Premium 120K disponible avec paiement Airtel Money direct sur le site</p>
+<div class="comp pro"><b>🏪 Boutique en ligne 50K</b> C'est ton magasin climatisé. Tu peux mettre 100, 200 produits vêtements/sacs avec tailles, couleurs. Tu peux ajouter/supprimer toi-même, mettre "rupture de stock". Le client a confiance et paie sans discuter. Ta boutique est connectée à ton Facebook et ton WhatsApp. <br><i style="color:#00ff88">→ Ça sert à RASSURER et devenir une MARQUE.</i></div>
+<p style="margin-top:10px"><b style="color:#00ff88">✅ Pour 50K tu as :</b><br>• Produits ILLIMITÉS (pas 3 photos)<br>• Ajout/suppression par toi-même<br>• Panier + commande WhatsApp auto + livraison par quartier<br>• Mode Premium 120K disponible avec paiement Airtel Money direct sur le site</p>
 <a href="https://wa.me/242069548949?text=Boss%20j'ai%20vu%20les%20d%C3%A9tails%20boutique,%20je%20veux%20la%20version%2050k%20ou%20Premium" style="display:block;text-align:center;margin-top:12px;background:#00ff88;color:#000;padding:12px;border-radius:25px;font-weight:900;text-decoration:none">Commander ma boutique</a>
 <button class="close-modal" onclick="closeM('boutique')">Fermer</button>
 </div>
 </div>
-
 <div class="modal" id="modal-carte">
 <div class="modal-box">
-<h2>💳 Carte Virtuelle - 2 types expliqués</h2>
-<div class="comp pro"><b>A) Carte de Visite Virtuelle 10K</b> C'est comme ton site MSD actuel. Photo, nom, ce que tu fais, boutons WhatsApp/Facebook/TikTok, QR Code. Tu envoies 1 lien et on ne perd plus ton numéro. Livré en 24h.</div>
-<div class="comp"><b>B) Carte Bancaire Visa Virtuelle 10K de frais</b> Pour payer sur internet : Facebook Ads, Netflix, Alibaba, Canva. Tu me donnes ton budget (ex 20$) + 10K frais, je te crée la carte en 5 min via RedotPay/Pyypl. Je t'envoie les numéros, tu utilises direct.</div>
-<p><b>Pour commander :</b> Envoie nom, photo, et ton activité sur WhatsApp.</p>
-<a href="https://wa.me/242069548949?text=Boss%20je%20veux%20une%20carte%20virtuelle" style="display:block;text-align:center;margin-top:12px;background:#00ff88;color:#000;padding:12px;border-radius:25px;font-weight:900;text-decoration:none">Commander 10K</a>
+<h2>💳 Carte Virtuelle - 2 types</h2>
+<div class="comp pro"><b>A) Carte de Visite Virtuelle 10K</b> Photo, nom, ce que tu fais, boutons WhatsApp/Facebook/TikTok, QR Code. 1 lien, on ne perd plus ton numéro. Livré en 24h.</div>
+<div class="comp"><b>B) Carte Bancaire Visa Virtuelle 10K de frais</b> Pour payer : Facebook Ads, Netflix, Alibaba. Tu me donnes ton budget (ex 20$) + 10K frais, je te crée la carte en 5 min via RedotPay/Pyypl.</div>
 <button class="close-modal" onclick="closeM('carte')">Fermer</button>
 </div>
 </div>
-
 <div class="modal" id="modal-vitrine">
 <div class="modal-box">
 <h2>🌐 Site Pro + WhatsApp</h2>
-<p>Pour ceux qui n'ont pas de produits mais un SERVICE : Coiffeur, Restaurant, Garage, Plombier, Auto-école...</p>
-<p style="margin-top:10px">✅ Services + prix<br>✅ Galerie photo<br>✅ Bouton "Réserver" qui ouvre WhatsApp avec message déjà écrit<br>✅ Google Maps pour te trouver<br>✅ Rapide même avec mauvaise connexion</p>
+<p>Pour SERVICE : Coiffeur, Restaurant, Garage, Plombier, Auto-école...<br><br>✅ Services + prix<br>✅ Galerie photo<br>✅ Bouton "Réserver" qui ouvre WhatsApp auto<br>✅ Google Maps</p>
 <button class="close-modal" onclick="closeM('vitrine')">Fermer</button>
 </div>
 </div>
-
 <div class="modal" id="modal-iptv">
 <div class="modal-box">
-<h2>📺 IPTV Premium</h2>
-<p>12 mois toutes chaînes : Canal+, Bein, Novelas, foot, films. Sur Smart TV, Box Android, Téléphone. Installation à distance.</p>
+<h2>📺 IPTV Premium 25.000F</h2>
+<p>12 mois toutes chaînes : Canal+, Bein, Novelas, foot, films. Sur Smart TV, Box Android, Téléphone. Installation à distance incluse.<br><br><b style="color:#00ff88">Pourquoi 25K?</b> Abonnement officiel 12 mois + config + support. Moins cher que 2.000F x 12 mois chez les autres.</p>
+<a href="https://wa.me/242069548949?text=Boss%20je%20veux%20IPTV%2025k" style="display:block;text-align:center;margin-top:12px;background:#00ff88;color:#000;padding:12px;border-radius:25px;font-weight:900;text-decoration:none">Commander 25K</a>
 <button class="close-modal" onclick="closeM('iptv')">Fermer</button>
 </div>
 </div>
-
 <div class="modal" id="modal-qr">
 <div class="modal-box">
 <h2>🔳 QR Code Pro</h2>
-<p>Ton QR Code perso qui amène direct sur ton WhatsApp ou ta boutique. À coller sur ta vitrine, tes sacs, tes flyers. Le client scanne et commande direct.</p>
+<p>Ton QR Code perso qui amène direct sur ton WhatsApp ou ta boutique. À coller sur ta vitrine, tes sacs, tes flyers.</p>
 <button class="close-modal" onclick="closeM('qr')">Fermer</button>
 </div>
 </div>
-
 <script>
 const datas=[
 {name:"Maman Grâce",prod:"Boutique Complète",time:"Il y a 1 jour • Pointe-Noire",icon:"🛍️"},
@@ -206,7 +185,6 @@ idx++;
 }
 setTimeout(showPop,2500);
 setInterval(showPop,9000);
-
 function openM(id){document.getElementById('modal-'+id).classList.add('active')}
 function closeM(id){document.getElementById('modal-'+id).classList.remove('active')}
 document.querySelectorAll('.modal').forEach(m=>{m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active')})})
