@@ -1,126 +1,215 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M.S.D Universal Code - Agence Digitale Pointe-Noire</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M.S.D Universal Code - Pointe-Noire</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
-body{font-family:'Poppins',sans-serif}
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:100;overflow-y:auto;padding:20px}
-.modal.active{display:flex;align-items:center;justify-content:center}
+body{margin:0;background:#050a14;color:white;font-family:Arial;overflow-x:hidden}
+.bg{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 20% 30%, rgba(0,255,136,0.12) 0%, transparent 50%),radial-gradient(circle at 80% 70%, rgba(0,255,136,0.08) 0%, transparent 50%);z-index:-1}
+.container{max-width:420px;margin:0 auto;padding:20px 20px 110px 20px;position:relative}
+.logo-text{font-size:72px;font-weight:900;text-align:center;color:#00ff88;text-shadow:0 0 20px #00ff88,0 0 40px #00ff88;letter-spacing:4px;margin:10px 0 0 0;line-height:1;animation:glow 2s infinite}
+.sub{font-size:26px;font-weight:bold;text-align:center;margin:0}
+.badge{display:block;width:120px;margin:12px auto;padding:6px 0;border:1px solid #00ff88;border-radius:20px;color:#00ff88;text-align:center;font-size:13px;font-weight:bold}
+.profile-wrap{display:flex;justify-content:center;margin:22px 0}
+.profile{width:135px;height:135px;border-radius:50%;border:3px solid #00ff88;box-shadow:0 0 30px #00ff88,0 0 60px rgba(0,255,136,0.5);object-fit:cover;animation:pulseImg 2.5s infinite}
+.info{text-align:center;font-size:13px;opacity:0.8;margin:10px 0 20px 0}
+.counter{display:flex;justify-content:space-around;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.2);border-radius:14px;padding:15px;margin:18px 0;text-align:center}
+.counter b{color:#00ff88;font-size:22px;display:block}
+.counter span{font-size:11px;opacity:0.7}
+.services-title{color:#00ff88;font-size:17px;font-weight:bold;margin:22px 0 12px 0;border-bottom:1px solid rgba(0,255,136,0.4);padding-bottom:8px}
+.service{display:flex;align-items:center;justify-content:space-between;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.18);border-radius:12px;padding:13px;margin:9px 0}
+.service-left{display:flex;align-items:center}
+.service-icon{font-size:24px;margin-right:14px;width:32px;text-align:center}
+.service-text{font-size:15px;font-weight:500}
+.detail-btn{font-size:11px;color:#00ff88;border:1px solid rgba(0,255,136,0.4);padding:5px 10px;border-radius:20px;background:rgba(0,255,136,0.1);cursor:pointer}
+.price-box{background:linear-gradient(135deg, rgba(0,255,136,0.12), rgba(0,255,136,0.03));border:1.5px solid #00ff88;border-radius:16px;padding:16px;margin:12px 0}
+.price-top{display:flex;justify-content:space-between;align-items:center}
+.price-box b{color:#00ff88;font-size:18px}
+.price-box .name{font-size:14px;font-weight:bold}
+.price-box .desc{font-size:11px;opacity:0.6}
+.price-actions{display:flex;gap:8px;margin-top:10px}
+.price-actions a, .price-actions button{flex:1;padding:8px 0;border-radius:20px;font-size:12px;font-weight:bold;text-align:center;text-decoration:none;cursor:pointer}
+.btn-details{background:transparent;border:1px solid rgba(0,255,136,0.5);color:#00ff88}
+.btn-order{background:#00ff88;color:#000;border:none}
+.testi{background:rgba(255,255,255,0.05);border-left:3px solid #00ff88;border-radius:10px;padding:12px;margin:10px 0;font-size:13px}
+.testi b{color:#00ff88;font-size:12px}
+.link-box{margin-top:22px;border:1.5px solid #00ff88;border-radius:14px;padding:15px;background:rgba(0,255,136,0.07);box-shadow:0 0 20px rgba(0,255,136,0.2);text-align:center}
+.link{color:#00ff88;word-break:break-all;font-size:12px;text-align:center;display:block;text-decoration:none;margin-bottom:8px}
+.wa{display:flex;align-items:center;justify-content:center;gap:7px;font-size:15px;margin-top:10px}.wa b{color:#00ff88}
+.btn{display:block;width:100%;padding:17px 0;background:#00ff88;color:#000;text-align:center;font-weight:900;border-radius:12px;text-decoration:none;margin-top:18px;font-size:17px;box-shadow:0 0 25px #00ff88}
+.sticky{position:fixed;bottom:15px;left:50%;transform:translateX(-50%);width:90%;max-width:380px;background:#00ff88;color:#000;padding:14px 0;border-radius:30px;text-align:center;font-weight:900;text-decoration:none;box-shadow:0 0 30px #00ff88,0 5px 20px rgba(0,0,0,0.5);z-index:999;animation:bounce 2s infinite}
+.qr{width:140px;height:140px;border-radius:12px;border:2px solid #00ff88;margin:12px auto;display:block;background:white;padding:6px}
+.popup{position:fixed;bottom:80px;left:15px;background:rgba(5,15,30,0.96);border:1.5px solid #00ff88;border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 0 20px rgba(0,255,136,0.4);z-index:1000;transform:translateX(-120%);transition:0.6s;max-width:300px}
+.popup.show{transform:translateX(0)}
+.popup-icon{font-size:22px;background:rgba(0,255,136,0.15);width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.popup-text{font-size:12px;line-height:1.3}
+.popup-text b{color:#00ff88}
+.popup-time{font-size:10px;opacity:0.5}
+
+/* MODAL DETAILS */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.85);z-index:2000;display:none;overflow-y:auto;padding:20px}
+.modal.active{display:flex;align-items:flex-start;justify-content:center}
+.modal-box{background:#0e1a2a;border:1.5px solid #00ff88;border-radius:18px;max-width:400px;width:100%;padding:20px;margin-top:30px;box-shadow:0 0 30px rgba(0,255,136,0.3)}
+.modal-box h2{color:#00ff88;margin:0 0 8px 0;font-size:18px}
+.modal-box p{font-size:13px;line-height:1.5;opacity:0.9}
+.comp{margin:12px 0;background:rgba(255,255,255,0.05);border-radius:10px;padding:12px;font-size:12px}
+.comp b{display:block;margin-bottom:4px}
+.comp.pro{border-left:3px solid #00ff88;background:rgba(0,255,136,0.08)}
+.close-modal{display:block;width:100%;margin-top:14px;padding:12px;background:#00ff88;color:#000;border:none;border-radius:25px;font-weight:900;cursor:pointer}
+
+@keyframes glow{0%{text-shadow:0 0 20px #00ff88}50%{text-shadow:0 0 40px #00ff88,0 0 70px #00ff88}100%{text-shadow:0 0 20px #00ff88}}
+@keyframes pulseImg{0%{box-shadow:0 0 20px #00ff88}50%{box-shadow:0 0 40px #00ff88,0 0 70px #00ff88}100%{box-shadow:0 0 20px #00ff88}}
+@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
 </style>
 </head>
-<body class="bg-[#0a0a0f] text-white">
+<body>
+<div class="bg"></div>
+<div class="container">
+<div class="logo-text">M.S.D</div>
+<div class="sub">Universal Code</div>
+<div class="badge">BETA v0.4</div>
+<div class="profile-wrap"><img class="profile" src="IMG-20260924-WA5118.jpg" alt="MSD"></div>
+<div class="info">Developer & Tech • Pointe-Noire, Congo</div>
+<div class="counter"><div><b>127+</b><span>Clients</span></div><div><b>4.9★</b><span>Satisfaction</span></div><div><b>24/7</b><span>Support</span></div></div>
 
-<!-- HEADER -->
-<header class="p-6 flex justify-between items-center max-w-7xl mx-auto">
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-cyan-400 rounded-lg flex items-center justify-center font-extrabold">M</div>
-<div><p class="font-bold leading-none">M.S.D Universal</p><p class="text-xs text-gray-400 -mt-1">CODE • Pointe-Noire</p></div>
-</div>
-<a href="https://wa.me/242068123456" class="bg-white text-black px-5 py-2 rounded-full font-bold text-sm">WhatsApp</a>
-</header>
+<div class="services-title">⚡ SERVICES BETA</div>
+<div class="service"><div class="service-left"><div class="service-icon">🛍️</div><div class="service-text">Boutique en ligne complète</div></div><button class="detail-btn" onclick="openM('boutique')">Détails</button></div>
+<div class="service"><div class="service-left"><div class="service-icon">💳</div><div class="service-text">Carte bancaire virtuelle</div></div><button class="detail-btn" onclick="openM('carte')">Détails</button></div>
+<div class="service"><div class="service-left"><div class="service-icon">🌐</div><div class="service-text">Site pro + WhatsApp direct</div></div><button class="detail-btn" onclick="openM('vitrine')">Détails</button></div>
+<div class="service"><div class="service-left"><div class="service-icon">📺</div><div class="service-text">IPTV / Box Android</div></div><button class="detail-btn" onclick="openM('iptv')">Détails</button></div>
+<div class="service"><div class="service-left"><div class="service-icon">🔳</div><div class="service-text">Carte de visite + QR Code</div></div><button class="detail-btn" onclick="openM('qr')">Détails</button></div>
 
-<!-- HERO -->
-<section class="max-w-7xl mx-auto px-6 py-10 text-center">
-<h1 class="text-4xl md:text-6xl font-extrabold leading-tight">On digitalise ton <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">business en 48h.</span></h1>
-<p class="text-gray-400 mt-4 max-w-2xl mx-auto">Agence digitale basée à Pointe-Noire. Site, Boutique, Carte. Pas de blabla, que des résultats.</p>
-</section>
+<div class="services-title">💰 TARIFS TRANSPARENTS</div>
 
-<!-- SERVICES -->
-<section class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 pb-20">
-
-<!-- BOUTIQUE -->
-<div class="bg-[#15151d] border border-white/10 rounded-[24px] p-6">
-<div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-bag-shopping text-blue-400"></i></div>
-<h3 class="font-bold text-xl">Boutique en Ligne</h3>
-<p class="text-blue-400 font-extrabold text-2xl mt-1">50.000F</p>
-<p class="text-gray-400 text-sm mt-2">Ta marque devient une entreprise. Pas un débrouillard Facebook.</p>
-<button onclick="openModal('boutique')" class="mt-4 w-full bg-white/10 hover:bg-white/20 py-3 rounded-full font-bold text-sm">Voir détails →</button>
-<a href="https://wa.me/242068123456?text=Salut%20Boss,%20je%20veux%20la%20Boutique%20%C3%A0%2050k" class="mt-2 w-full bg-white text-black py-3 rounded-full font-bold text-sm block text-center">Commander</a>
-</div>
-
-<!-- SITE VITRINE -->
-<div class="bg-[#15151d] border border-white/10 rounded-[24px] p-6">
-<div class="w-12 h-12 bg-cyan-500/20 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-laptop text-cyan-400"></i></div>
-<h3 class="font-bold text-xl">Site Vitrine Pro</h3>
-<p class="text-cyan-400 font-extrabold text-2xl mt-1">35.000F</p>
-<p class="text-gray-400 text-sm mt-2">Pour coiffeur, restaurant, garage. Réservation WhatsApp auto.</p>
-<button onclick="openModal('vitrine')" class="mt-4 w-full bg-white/10 hover:bg-white/20 py-3 rounded-full font-bold text-sm">Voir détails →</button>
-<a href="https://wa.me/242068123456?text=Salut%20Boss,%20je%20veux%20le%20Site%20Vitrine%20%C3%A0%2035k" class="mt-2 w-full bg-white text-black py-3 rounded-full font-bold text-sm block text-center">Commander</a>
-</div>
-
-<!-- CARTE -->
-<div class="bg-[#15151d] border border-white/10 rounded-[24px] p-6">
-<div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-4"><i class="fa-solid fa-id-card text-purple-400"></i></div>
-<h3 class="font-bold text-xl">Carte Virtuelle</h3>
-<p class="text-purple-400 font-extrabold text-2xl mt-1">10.000F</p>
-<p class="text-gray-400 text-sm mt-2">Ta carte de visite qui ne se perd jamais + carte Visa pour payer.</p>
-<button onclick="openModal('carte')" class="mt-4 w-full bg-white/10 hover:bg-white/20 py-3 rounded-full font-bold text-sm">Voir détails →</button>
-<a href="https://wa.me/242068123456?text=Salut%20Boss,%20je%20veux%20une%20Carte%20Virtuelle" class="mt-2 w-full bg-white text-black py-3 rounded-full font-bold text-sm block text-center">Commander</a>
-</div>
-
-</section>
-
-<!-- MODAL BOUTIQUE -->
-<div id="modal-boutique" class="modal">
-<div class="bg-[#1a1a25] max-w-2xl w-full rounded-[28px] p-8 border border-white/10">
-<h2 class="text-2xl font-extrabold">Pourquoi Boutique et pas juste Facebook?</h2>
-<p class="text-gray-400 text-sm mt-3">C'est la question que tout le monde pose. Voici la vérité du terrain à Pointe-Noire :</p>
-
-<div class="mt-6 space-y-4">
-<div class="bg-white/5 p-4 rounded-xl flex gap-4"><div class="text-xl">📢</div><div><b>1. Page Facebook = Pour ATTIRER</b><p class="text-gray-400 text-sm">C'est la pancarte. Tout le monde te voit mais personne ne te fait confiance. Facebook peut te bloquer demain et tu perds tout. Tu passes ta journée à répondre "prix?"</p></div></div>
-<div class="bg-white/5 p-4 rounded-xl flex gap-4"><div class="text-xl">💬</div><div><b>2. WhatsApp = Pour ENCAISSER</b><p class="text-gray-400 text-sm">C'est là où l'argent rentre. Mais personne ne te trouve sur WhatsApp si tu ne fais pas de pub ailleurs.</p></div></div>
-<div class="bg-blue-600 p-4 rounded-xl flex gap-4"><div class="text-xl">🏪</div><div><b>3. Boutique en Ligne = Pour RASSURER et devenir une MARQUE</b><p class="text-sm">Quand tu dis "va sur maboutique.com" le client paie sans discuter. Tu peux mettre 200 articles, tailles, couleurs, stock. Tu es propriétaire.</p></div></div>
-</div>
-
-<div class="mt-6 bg-black/40 p-4 rounded-xl text-sm">
-<p class="font-bold">✅ Ce que tu reçois pour 50.000F :</p>
-<p class="text-gray-300 mt-2">• Boutique avec produits ILLIMITÉS (vêtements, sacs)<br>• Panier + bouton WhatsApp automatique<br>• Page qui s'ouvre vite même avec mauvaise connexion<br>• QR Code pour ton magasin<br>• Livraison 48h - Modifs 1 mois offertes</p>
-</div>
-
-<div class="flex gap-3 mt-6">
-<a href="https://wa.me/242068123456?text=Boss%20j'ai%20vu%20les%20d%C3%A9tails%20boutique,%20je%20veux%20commander" class="flex-1 bg-white text-black py-3 rounded-full font-bold text-center">Je veux ma boutique</a>
-<button onclick="closeModal('boutique')" class="px-6 py-3 bg-white/10 rounded-full">Fermer</button>
-</div>
+<div class="price-box">
+<div class="price-top"><div><div class="name">🛍️ Boutique Complète</div><div class="desc">100+ produits • Paiement • Livraison • Stock</div></div><b>50.000 F</b></div>
+<div class="price-actions">
+<button class="btn-details" onclick="openM('boutique')">Voir détails →</button>
+<a class="btn-order" href="https://wa.me/242069548949?text=Boss%20je%20veux%20Boutique%2050k">Commander</a>
 </div>
 </div>
 
-<!-- MODAL VITRINE -->
-<div id="modal-vitrine" class="modal">
-<div class="bg-[#1a1a25] max-w-2xl w-full rounded-[28px] p-8 border border-white/10">
-<h2 class="text-2xl font-extrabold">Site Vitrine Pro - Pour qui?</h2>
-<p class="text-gray-400 text-sm mt-3">Si tu n'as pas de produits mais un SERVICE (coiffeur, restaurant, plombier, garage)</p>
-<p class="text-gray-300 text-sm mt-4">• Tes services + prix<br>• Galerie photos<br>• Bouton "Réserver sur WhatsApp" qui remplit le message auto<br>• Google Maps intégré<br>• Témoignages clients</p>
-<div class="flex gap-3 mt-6">
-<a href="https://wa.me/242068123456?text=Je%20veux%20le%20site%20vitrine%2035k" class="flex-1 bg-white text-black py-3 rounded-full font-bold text-center">Commander 35k</a>
-<button onclick="closeModal('vitrine')" class="px-6 py-3 bg-white/10 rounded-full">Fermer</button>
-</div>
+<div class="price-box">
+<div class="price-top"><div><div class="name">🌐 Site Pro + WhatsApp</div><div class="desc">Design pro + bouton direct</div></div><b>35.000 F</b></div>
+<div class="price-actions">
+<button class="btn-details" onclick="openM('vitrine')">Voir détails →</button>
+<a class="btn-order" href="https://wa.me/242069548949?text=Boss%20je%20veux%20Site%20Pro%2035k">Commander</a>
 </div>
 </div>
 
-<!-- MODAL CARTE -->
-<div id="modal-carte" class="modal">
-<div class="bg-[#1a1a25] max-w-2xl w-full rounded-[28px] p-8 border border-white/10">
-<h2 class="text-2xl font-extrabold">Carte Virtuelle - 2 types</h2>
-<div class="mt-6 space-y-4">
-<div class="bg-white/5 p-4 rounded-xl"><b> A) Carte de Visite Digitale - 10.000F</b><p class="text-gray-400 text-sm mt-1">Ta page perso avec photo, services, liens Facebook/WhatsApp/TikTok, QR Code. Tu envoies le lien et on ne perd plus ton numéro. Livré en 24h.</p></div>
-<div class="bg-purple-600/20 border border-purple-500/30 p-4 rounded-xl"><b> B) Carte Bancaire Visa Virtuelle - 10.000F de création</b><p class="text-gray-400 text-sm mt-1">Pour payer sur internet, Facebook Ads, Netflix, Alibaba. Tu me donnes ton budget (ex: 20$) + 10k frais, je te crée la carte en 5 min via RedotPay. Utilisable partout.</p></div>
+<div class="price-box">
+<div class="price-top"><div><div class="name">💳 Carte Virtuelle</div><div class="desc">Visite + Visa / PayPal</div></div><b>10.000 F</b></div>
+<div class="price-actions">
+<button class="btn-details" onclick="openM('carte')">Voir détails →</button>
+<a class="btn-order" href="https://wa.me/242069548949?text=Boss%20je%20veux%20Carte%20Virtuelle">Commander</a>
 </div>
-<p class="text-xs text-gray-500 mt-4">Pour commander : Envoie juste ton nom complet, photo, et ce que tu fais.</p>
-<div class="flex gap-3 mt-6">
-<a href="https://wa.me/242068123456?text=Je%20veux%20une%20carte%20virtuelle" class="flex-1 bg-white text-black py-3 rounded-full font-bold text-center">Commander</a>
-<button onclick="closeModal('carte')" class="px-6 py-3 bg-white/10 rounded-full">Fermer</button>
 </div>
+
+<div class="price-box">
+<div class="price-top"><div><div class="name">📺 IPTV Premium</div><div class="desc">12 mois • Toutes chaînes</div></div><b>15.000 F</b></div>
+<div class="price-actions">
+<button class="btn-details" onclick="openM('iptv')">Voir détails →</button>
+<a class="btn-order" href="https://wa.me/242069548949?text=Boss%20je%20veux%20IPTV">Commander</a>
+</div>
+</div>
+
+<div class="services-title">⭐ ILS NOUS FONT CONFIANCE</div>
+<div class="testi">"MSD m'a créé ma boutique en 2 jours, maintenant je vends même la nuit !"<br><b>— Maman Bijoux, Pointe-Noire</b></div>
+<div class="testi">"Carte virtuelle reçue en 10 minutes, j'ai pu payer mon fournisseur Alibaba."<br><b>— Chris, Brazzaville</b></div>
+<a class="btn" href="https://wa.me/242069548949?text=Salut%20MSD%20je%20veux%20mon%20business%20digital">💬 Je veux mon business - 50K</a>
+<div class="link-box">
+<a class="link" href="https://msd-universal.github.io/msd-universal-code/">🌐 msd-universal.github.io/msd-universal-code/</a>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/242069548949" alt="QR WhatsApp">
+<div style="font-size:11px;opacity:0.7">Scanne pour WhatsApp direct</div>
+<div class="wa">📲 WhatsApp <b>242 06 954 8949</b></div>
+</div>
+<div style="text-align:center;font-size:10px;opacity:0.35;margin-top:18px">Solutions digitales • Développement • Support Tech 24/7<br>Pointe-Noire • Brazzaville • Kinshasa</div>
+</div>
+<a class="sticky" href="https://wa.me/242069548949?text=Salut%20MSD%20je%20veux%20commander">💬 Parler à MSD maintenant</a>
+
+<!-- POP-UP PREUVE SOCIALE 1-3 JOURS -->
+<div class="popup" id="popup">
+<div class="popup-icon">🛍️</div>
+<div class="popup-text"><b id="p-name">Maman Grâce</b> vient de commander <b id="p-prod">Boutique Complète</b><br><span class="popup-time" id="p-time">Il y a 1 jour • Pointe-Noire</span></div>
+</div>
+
+<!-- MODALS DETAILS -->
+<div class="modal" id="modal-boutique">
+<div class="modal-box">
+<h2>🛍️ Boutique Complète - Pourquoi c'est mieux que Facebook?</h2>
+<p>Tu avais raison Boss, 3 photos ne suffisent pas. Voilà la vraie différence :</p>
+<div class="comp"><b>📢 Page Facebook / Boutique Facebook</b> C'est la pancarte au marché. Gratuit mais ce n'est pas à toi. Facebook peut bloquer demain. Tu passes ta journée à répondre "prix?". Pas de gestion de stock, pas de paiement propre. <br><i style="color:#ffaa00">→ Ça sert à ATTIRER les clients.</i></div>
+<div class="comp"><b>💬 Catalogue WhatsApp</b> C'est la caisse. 90% des ventes à P-Noire se font là. Mais personne ne te découvre sur WhatsApp. <br><i style="color:#ffaa00">→ Ça sert à ENCAISSER.</i></div>
+<div class="comp pro"><b>🏪 Boutique en ligne 50K (Ce que je te vends)</b> C'est ton magasin climatisé. Tu peux mettre 100, 200 produits vêtements/sacs avec tailles, couleurs. Tu peux ajouter/supprimer toi-même, mettre "rupture de stock". Le client a confiance et paie sans discuter. Ta boutique est connectée à ton Facebook et ton WhatsApp. <br><i style="color:#00ff88">→ Ça sert à RASSURER et devenir une MARQUE.</i></div>
+<p style="margin-top:10px"><b style="color:#00ff88">✅ Pour 50K tu as :</b><br>• Produits ILLIMITÉS (pas 3 photos)<br>• Ajout/suppression par toi-même (je te montre)<br>• Panier + commande WhatsApp auto + livraison par quartier (Tié-Tié, Mvoumvou...)<br>• Mode Premium 120K disponible avec paiement Airtel Money direct sur le site</p>
+<a href="https://wa.me/242069548949?text=Boss%20j'ai%20vu%20les%20d%C3%A9tails%20boutique,%20je%20veux%20la%20version%2050k%20ou%20Premium" style="display:block;text-align:center;margin-top:12px;background:#00ff88;color:#000;padding:12px;border-radius:25px;font-weight:900;text-decoration:none">Commander ma boutique</a>
+<button class="close-modal" onclick="closeM('boutique')">Fermer</button>
+</div>
+</div>
+
+<div class="modal" id="modal-carte">
+<div class="modal-box">
+<h2>💳 Carte Virtuelle - 2 types expliqués</h2>
+<div class="comp pro"><b>A) Carte de Visite Virtuelle 10K</b> C'est comme ton site MSD actuel. Photo, nom, ce que tu fais, boutons WhatsApp/Facebook/TikTok, QR Code. Tu envoies 1 lien et on ne perd plus ton numéro. Livré en 24h.</div>
+<div class="comp"><b>B) Carte Bancaire Visa Virtuelle 10K de frais</b> Pour payer sur internet : Facebook Ads, Netflix, Alibaba, Canva. Tu me donnes ton budget (ex 20$) + 10K frais, je te crée la carte en 5 min via RedotPay/Pyypl. Je t'envoie les numéros, tu utilises direct.</div>
+<p><b>Pour commander :</b> Envoie nom, photo, et ton activité sur WhatsApp.</p>
+<a href="https://wa.me/242069548949?text=Boss%20je%20veux%20une%20carte%20virtuelle" style="display:block;text-align:center;margin-top:12px;background:#00ff88;color:#000;padding:12px;border-radius:25px;font-weight:900;text-decoration:none">Commander 10K</a>
+<button class="close-modal" onclick="closeM('carte')">Fermer</button>
+</div>
+</div>
+
+<div class="modal" id="modal-vitrine">
+<div class="modal-box">
+<h2>🌐 Site Pro + WhatsApp</h2>
+<p>Pour ceux qui n'ont pas de produits mais un SERVICE : Coiffeur, Restaurant, Garage, Plombier, Auto-école...</p>
+<p style="margin-top:10px">✅ Services + prix<br>✅ Galerie photo<br>✅ Bouton "Réserver" qui ouvre WhatsApp avec message déjà écrit<br>✅ Google Maps pour te trouver<br>✅ Rapide même avec mauvaise connexion</p>
+<button class="close-modal" onclick="closeM('vitrine')">Fermer</button>
+</div>
+</div>
+
+<div class="modal" id="modal-iptv">
+<div class="modal-box">
+<h2>📺 IPTV Premium</h2>
+<p>12 mois toutes chaînes : Canal+, Bein, Novelas, foot, films. Sur Smart TV, Box Android, Téléphone. Installation à distance.</p>
+<button class="close-modal" onclick="closeM('iptv')">Fermer</button>
+</div>
+</div>
+
+<div class="modal" id="modal-qr">
+<div class="modal-box">
+<h2>🔳 QR Code Pro</h2>
+<p>Ton QR Code perso qui amène direct sur ton WhatsApp ou ta boutique. À coller sur ta vitrine, tes sacs, tes flyers. Le client scanne et commande direct.</p>
+<button class="close-modal" onclick="closeM('qr')">Fermer</button>
 </div>
 </div>
 
 <script>
-function openModal(id){document.getElementById('modal-'+id).classList.add('active')}
-function closeModal(id){document.getElementById('modal-'+id).classList.remove('active')}
+const datas=[
+{name:"Maman Grâce",prod:"Boutique Complète",time:"Il y a 1 jour • Pointe-Noire",icon:"🛍️"},
+{name:"Chris M.",prod:"Carte Virtuelle",time:"Il y a 2 jours • Brazzaville",icon:"💳"},
+{name:"Auto École Victoire",prod:"Site Pro + WhatsApp",time:"Il y a 1 jour • Pointe-Noire",icon:"🌐"},
+{name:"Maman Bijoux",prod:"Boutique Complète",time:"Il y a 3 jours • Tié-Tié",icon:"🛍️"},
+{name:"Samuel K.",prod:"IPTV Premium",time:"Il y a 2 jours • Dolisie",icon:"📺"},
+{name:"Boutique Grâce",prod:"QR Code Pro",time:"Il y a 1 jour • Mvoumvou",icon:"🔳"}
+];
+let idx=0;
+function showPop(){
+const d=datas[idx%datas.length];
+document.getElementById('p-name').innerText=d.name;
+document.getElementById('p-prod').innerText=d.prod;
+document.getElementById('p-time').innerText=d.time;
+document.querySelector('.popup-icon').innerText=d.icon;
+document.getElementById('popup').classList.add('show');
+setTimeout(()=>{document.getElementById('popup').classList.remove('show');},4000);
+idx++;
+}
+setTimeout(showPop,2500);
+setInterval(showPop,9000);
+
+function openM(id){document.getElementById('modal-'+id).classList.add('active')}
+function closeM(id){document.getElementById('modal-'+id).classList.remove('active')}
+document.querySelectorAll('.modal').forEach(m=>{m.addEventListener('click',e=>{if(e.target===m)m.classList.remove('active')})})
 </script>
 </body>
 </html>
